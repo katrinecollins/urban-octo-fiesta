@@ -1,21 +1,19 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Sign Up</h2>
+<form class="signup-form login-form border-2 border-yellow-900 w-full">
+  <div>
+    <label class="bg-yellow-900 text-xl font-bold text-yellow-200 p-1"  for="username-signup">Username:</label>
+    <input  class="w-full"  type="text" id="username-signup" />
   </div>
-  <div id="signup" role="tabpanel">
-    <form id="signup-form" class="card-body">
-      <div>
-        <label for="username-input-signup">Username</label>
-        <input type="text" id="username-input-signup" />
-      </div>
-      <div>
-        <label for="password-input-signup">Password</label>
-        <input type="password" id="password-input-signup" />
-      </div>
-      <button type="submit" id="signup-btn" class="btn" >Signup!</button>
-      <a href="/login">Login instead</a>
-    </form>
+  <div>
+    <label class="bg-yellow-900 text-xl font-bold text-yellow-200 p-1" for="email-signup">Email:</label>
+    <input class="w-full" type="text" id="email-signup" />
   </div>
-</div>
+  <div>
+    <label class="bg-yellow-900 text-xl font-bold text-yellow-200 p-1" for="password-signup">Password:</label>
+    <input class="w-full" type="password" id="password-signup" />
+  </div>
+  <div class="flex justify-center">
+    <button class="p-1 w-10/12 bg-yellow-900 text-yellow-200 text-xl hover:bg-yellow-400" type="submit">Sign-Up</button>
+  </div>
+</form>
 
-<script src="/js/signup.js"></script>
+<script src="/javascript/signup.js"></script>

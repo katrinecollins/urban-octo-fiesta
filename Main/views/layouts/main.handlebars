@@ -1,35 +1,42 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Tech Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul>
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="/login">Login</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
-  <header class="hero">
-    <h1 class="app-title"><a href="/">The Tech Blog</a></h1>
-  </header>
+  <body class="bg-yellow-200">
+    <div class="wrapper flex flex-col mx-40">
+      <header class="bg-yellow-900 pt-2">
+        <nav>
+          <nav class="text-yellow-200">
+              <a class="font-bold text-xl pl-8" href="/">Home</a>
+              <a class="font-bold text-xl pl-8" href="/dashboard">Dashboard</a>
+              <button class="font-bold text-xl pl-8" id="logout">Logout</button>
+              <a class="font-bold text-xl pl-8" href="/login">Login</a>
+          </nav>
+        </nav>
+         <h1 class="pl-8 font-extrabold text-2xl py-6">
+          <a class="bg-yellow-200 p-2 rounded-md" href="/">Tech Blog</a>
+        </h1>
+      </header>
+      <main class="p-4">
+        {{{body}}}
+      </main>
+      <footer>
+        Created by Katrine Collins :)
+      </footer>
+    </div>
 
-  <main class="col-auto">
-    {{{body}}}
-  </main>
-
-  <footer class="flex-row justify-center">
-    &copy; The Tech Blog Folks
-  </footer>
-</body>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
-<script src="/js/logout.js"></script>

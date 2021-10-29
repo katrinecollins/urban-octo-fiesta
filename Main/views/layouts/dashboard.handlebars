@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<section>
+  <h2 class="font-bold text-2xl py-1">Create A Post</h2>
+  <form class="new-post-form w-8/12 border-4 border-yellow-900">
+    <div class="w-full">
+      <label class="bg-yellow-900 text-yellow-200 font-bold text-2xl p-1 w-full" for="post-title">Title</label>
+      <input class="w-full" type="text" id="post-title" name="post-title" />
+      <label class="bg-yellow-900 text-yellow-200 font-bold text-2xl p-2 " for="post-url">Content</label>
+      <textarea class="w-full" id="post-url" type="text" name="post-url">
+      </textarea>
+    </div>
+    <div class="flex justify-center">
+      <button class="bg-yellow-900 text-yellow-200 font-bold text-xl px-6 py-2" type="submit" class="btn">Create-Post</button>
+    </div>
+  </form>
+</section>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a class=" w-24 p-1 rounded edit-link bg-yellow-900 text-yellow-200 text-xl font-bold" href="/dashboard/edit/{{post.id}}">Edit-Post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul class="flex-row">
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
-  <header class="hero">
-    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-  </header>
-
-  <main class="col-auto">
-    {{{body}}}
-  </main>
-
-  <footer class="footer flex-row justify-center">
-    <a href="/dashboard/new">➕ New Post</a>
-  </footer>
-</body>
-
-<script src="/js/logout.js"></script>
-
-</html>
+<script src="/javascript/add-post.js"></script>

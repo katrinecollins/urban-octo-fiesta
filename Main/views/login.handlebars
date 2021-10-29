@@ -1,19 +1,17 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Login</h2>
+<form class="login-form border-2 border-yellow-900 w-full">
+  <div>
+    <label class="bg-yellow-900 text-xl font-bold text-yellow-200 p-1" for="email-login">Email:</label>
+    <input class="w-full" type="text" id="email-login" />
   </div>
-  <form id="login-form" class="card-body">
-    <div>
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
-    </div>
-    <div>
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <button type="submit" id="login-btn" class="btn">Login!</button>
-    <a type="button" href="/signup">Sign up instead</a>
-  </form>
-</div>
+  <div>
+    <label class="bg-yellow-900 text-xl font-bold text-yellow-200 p-1" for="password-login">Password:</label>
+    <input class="w-full h-4/6" type="password" id="password-login" />
+  </div>
+  <div class="flex justify-center">
+    <button class="p-1 w-10/12 bg-yellow-900 hover:text-yellow-900 text-yellow-200 font-bold rounded-md text-xl hover:bg-yellow-400" type="submit">Login</button>
+  </div>
 
-<script src="/js/login.js"></script>
+  <a class="text-blue-600 font-bold text-lg pl-2" href="./signup">Sign-Up</a>
+</form>
+
+<script src="/javascript/login.js"></script>
