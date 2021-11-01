@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require("sequelize");
+//const { Votes } = require(".");
 const sequelize = require("../config/connections");
 
-class Vote extends Model {}
+class Votes extends Model {}
 
-Vote.init(
+Votes.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -34,4 +35,4 @@ Vote.init(
   }
 );
 
-module.exports = votes;
+module.exports = Votes;
